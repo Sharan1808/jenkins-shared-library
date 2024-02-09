@@ -24,7 +24,7 @@ def call() {
                 }
             }
 
-            stage('Release') {
+            stage('Release App') {
                 steps {
                     echo 'Release'
                 }
