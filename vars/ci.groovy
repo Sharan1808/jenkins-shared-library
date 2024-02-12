@@ -5,14 +5,17 @@ def call() {
           stage('Code Checkout') {}
           stage('Compile') {}
           stage('Build') {}
-      }
-      else if(BRANCH_NAME ==~ "PR.*") {
+      } else if(BRANCH_NAME ==~ "PR.*") {
           stage('Code Checkout') {}
           stage('Compile') {}
           stage('Test Cases') {}
           stage('Integration Test Cases') {}
-      }
-      else {
+      } else if(TAG_NAME ==~ ".*") {
+          stage('Code Checkout') {}
+          stage('Compile') {}
+          stage('Build') {}
+          stage('Release App') {}
+      } else {
           stage('Code Checkout') {}
           stage('Compile') {}
           stage('Test Cases') {}
