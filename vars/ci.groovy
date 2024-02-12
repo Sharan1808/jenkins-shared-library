@@ -4,12 +4,12 @@ def call() {
       stage('Compile') {}
 
 
-      if(BRANCH_NAME == "main") {
+      if(env.BRANCH_NAME == "main") {
           stage('Build') {}
-      } else if(BRANCH_NAME ==~ "PR.*") {
+      } else if(env.BRANCH_NAME ==~ "PR.*") {
           stage('Test Cases') {}
           stage('Integration Test Cases') {}
-      } else if(TAG_NAME ==~ ".*") {
+      } else if(env.TAG_NAME ==~ ".*") {
           stage('Build') {}
           stage('Release App') {}
       } else {
