@@ -12,7 +12,7 @@ def call() {
       stage('Code Checkout') {
           //git branch: "${env.branchName}", url: 'https://github.com/Sharan1808/expense-backend'
           checkout scmGit(
-                  branches: [[name: "${branchName}"]],
+                  branches: [[name: "${branch_name}"]],
                   userRemoteConfigs: [[url: "https://github.com/Sharan1808/expense-backend"]]
           )
       }
