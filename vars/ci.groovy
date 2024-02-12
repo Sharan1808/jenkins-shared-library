@@ -5,6 +5,10 @@ def call() {
           stage('Code Checkout') {}
           stage('Compile') {}
           stage('Build') {}
+      } else {
+          stage('Code Checkout') {}
+          stage('Compile') {}
+          stage('Test Cases') {}
       }
 //      stage('Compile') {}
 //      stage('Test Cases') {}
