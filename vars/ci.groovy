@@ -10,14 +10,15 @@ def call() {
               env.branch_name = "${env.BRANCH_NAME}"
           }
 
+      sh 'env'
       stage('Code Checkout') {
 //          git branch: "${env.branchName}", url: 'https://github.com/Sharan1808/expense-backend'
-//          checkout scmGit(
-//                  branches: [[name: "${branch_name}"]],
-//                  userRemoteConfigs: [[url: "https://github.com/Sharan1808/expense-backend"]]
-//          )
-          sh 'git clone https://github.com/Sharan1808/expense-backend .'
-          sh "git checkout ${branch_name}"
+          checkout scmGit(
+                  branches: [[name: "${branch_name}"]],
+                  userRemoteConfigs: [[url: "https://github.com/Sharan1808/expense-backend"]]
+          )
+//          sh 'git clone https://github.com/Sharan1808/expense-backend .'
+//          sh "git checkout ${branch_name}"
           sh 'cat Jenkinsfile'
       }
 
