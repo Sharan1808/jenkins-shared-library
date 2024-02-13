@@ -42,7 +42,11 @@ def call() {
           stage('Release App') {}
       } else {
           sh 'echo branch'
-          stage('Test Cases') {}
+          stage('Test Cases') {
+              //sh 'npm test'
+              //These test cases in organization is ideally written and we don't skip this step. Since it is LAB, So we are moving further ahead.
+
+          }
       }
 
   }
