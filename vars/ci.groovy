@@ -13,9 +13,8 @@ def call() {
           }
       }
 
-      sh 'env'
       stage('Code Checkout') {
-//          git branch: "${env.branchName}", url: 'https://github.com/Sharan1808/expense-backend'
+//         // git branch: "${env.branchName}", url: 'https://github.com/Sharan1808/expense-backend'
           checkout scmGit(
                   branches: [[name: "${branch_name}"]],
                   userRemoteConfigs: [[url: "https://github.com/Sharan1808/expense-backend"]]
