@@ -17,12 +17,14 @@ def call() {
 //         // git branch: "${env.branchName}", url: 'https://github.com/Sharan1808/expense-backend'
           checkout scmGit(
                   branches: [[name: "${branch_name}"]],
-                  userRemoteConfigs: [[url: "https://github.com/Sharan1808/expense-backend"]]
+                  userRemoteConfigs: [[url: "https://github.com/Sharan1808/${repo_name}"]]
           )
           sh 'cat Jenkinsfile'
       }
 
-      stage('Compile') {}
+      stage('Compile') {
+
+      }
 
       if(env.JOB_BASE_NAME ==~ "PR.*") {
           sh 'echo PR'
@@ -40,12 +42,5 @@ def call() {
           stage('Test Cases') {}
       }
 
-
-//      stage('Code Checkout') {}
-//      stage('Compile') {}
-//      stage('Test Cases') {}
-//      stage('Integration Test Cases') {}
-//      stage('Build') {}
-//      stage('Release App') {}
   }
 }
