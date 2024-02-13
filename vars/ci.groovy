@@ -22,9 +22,12 @@ def call() {
           sh 'cat Jenkinsfile'
       }
 
-      stage('Compile') {
-
+      if(app_type == "nodejs") {
+          stage('Download Dependencies') {
+              sh 'npm install'
+          }
       }
+
 
       if(env.JOB_BASE_NAME ==~ "PR.*") {
           sh 'echo PR'
