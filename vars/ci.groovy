@@ -31,8 +31,12 @@ def call() {
 
       if(env.JOB_BASE_NAME ==~ "PR.*") {
           sh 'echo PR'
-          stage('Test Cases') {}
-          stage('Code Quality') {}
+          stage('Test Cases') {
+              //sh 'npm test'
+          }
+          stage('Code Quality') {
+              
+          }
       } else if (env.BRANCH_NAME == "main") {
           sh 'echo main'
           stage('Build') {}
