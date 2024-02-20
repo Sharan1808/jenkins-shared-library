@@ -1,4 +1,5 @@
 def codeCheckout() {
+    sh 'env'
     sh "find . | sed -e '1d' |xargs rm -rf"
 
     if(env.TAG_NAME ==~ ".*") {
