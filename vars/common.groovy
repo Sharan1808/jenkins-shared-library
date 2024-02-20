@@ -18,6 +18,5 @@ def codeCheckout() {
                 branches: [[name: "${branch_name}"]],
                 userRemoteConfigs: [[url: "https://github.com/Sharan1808/${repo_name}"]]
         )
-        sh 'cat Jenkinsfile'
     }
 }
